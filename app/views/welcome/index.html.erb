@@ -1,7 +1,20 @@
 
-
 <h1 class="btn btn-success" >
-
   Hello, <%= @name %>
-
 </h1>
+
+<h4> 
+  Conteúdo central
+</h4>
+
+<% if @name == "João Lucas 2" %>
+
+  <%= content_for :sidebar do  %>
+    
+    Informação confidencial 1
+    Informação confidencial 2
+    Informação confidencial 3
+
+  <% end %>
+
+<% end %>
