@@ -1,11 +1,13 @@
 
+
+
 <% if @users.any? %>
   
   <% @users.each do |user| %>
     
-    <h3>
-      <%= "#{user.name}, #{user.email} - #{user.age}" %>
-    </h3>
+    <div class="well">
+      <%= "<b>#{user.name}</b>, #{user.email} - #{user.age} #{ gender_name(user) }".html_safe %>
+    </div>
 
   <% end %>
 

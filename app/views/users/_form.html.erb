@@ -1,5 +1,7 @@
 <%= form_for(user) do |f| %>
 
+  <%= render partial: 'shared/error_messages', locals: {resource: user} %>
+
   <div class="input-group col-md-6">
     <span class="input-group-addon">Nome</span>
     <%= f.text_field :name, class: 'form-control' %>
@@ -14,9 +16,14 @@
 
   <div class="input-group col-md-6">
     <span class="input-group-addon">Idade</span>
-    <%= f.text_field :age, class: 'form-control' %>
+    <%= f.number_field :age, class: 'form-control' %>
   </div>
   <br>
+
+  <% options = [ ["Feminino", User::FEMALE], ["Masculino",User::MALE]] %>
+  <%= f.select(:gender, options, {include_blank: " -- Escolha um sexo --"}) %>
+  
+  <br><br>
 
   <%= f.submit "Salvar", class: 'btn btn-success' %>
 

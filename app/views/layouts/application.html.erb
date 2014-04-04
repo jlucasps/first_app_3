@@ -15,6 +15,12 @@
       
       <div class="row row-offcanvas row-offcanvas-right">
 
+
+
+        <div class="col-md-9">
+          <%= yield %>
+        </div>
+        <br>
         <div class="col-md-3">
 
           <% if content_for? :sidebar %>
@@ -25,10 +31,6 @@
           
         </div>
 
-
-        <div class="col-md-9">
-          <%= yield %>
-        </div>
 
       </div>
 
