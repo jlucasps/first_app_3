@@ -2,10 +2,12 @@
 <h1 class="btn btn-success" >
   Hello, <%= @name %>
 </h1>
+<br><br><br>
 
-<h4> 
-  Conteúdo central
-</h4>
+
+<% label = "Listagem de usuários" %>
+<%= link_to label, users_path, class: 'btn btn-default' %>
+
 
 <% if @name == "João Lucas 2" %>
 
