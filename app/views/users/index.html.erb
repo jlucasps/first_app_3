@@ -6,7 +6,11 @@
   <% @users.each do |user| %>
     
     <div class="well">
-      <%= "<b>#{user.name}</b>, #{user.email} - #{user.age} #{ gender_name(user) }".html_safe %>
+      <i class="glyphicon glyphicon-user"></i>
+      <%= "<b>#{user.name}</b>".html_safe %>
+      &nbsp;&nbsp;
+      <% view_icon = "<i class='glyphicon glyphicon-search'></i>".html_safe %>
+      <%= link_to view_icon, user, class: 'btn btn-default' %>
     </div>
 
   <% end %>

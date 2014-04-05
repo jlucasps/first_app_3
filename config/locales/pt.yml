@@ -1,5 +1,7 @@
 pt:
   hello: "Bem vindo usuário"
+  back: Voltar
+  edit: Editar
 
   date:
     abbr_day_names:

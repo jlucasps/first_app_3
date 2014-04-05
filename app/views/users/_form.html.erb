@@ -20,10 +20,12 @@
   </div>
   <br>
 
-  <% options = [ ["Feminino", User::FEMALE], ["Masculino",User::MALE]] %>
-  <%= f.select(:gender, options, {include_blank: " -- Escolha um sexo --"}) %>
-  
-  <br><br>
+  <div class="input-group col-md-6">
+    <% options = [ ["Feminino", User::FEMALE], ["Masculino",User::MALE]] %>
+    <%= f.select :gender, options, {include_blank: " -- Escolha um sexo --"}, class: 'form-control'  %>
+  </div>
+
+  <br>
 
   <%= f.submit "Salvar", class: 'btn btn-success' %>
 
