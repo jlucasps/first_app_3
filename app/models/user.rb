@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   validates :gender, presence:true, if: :adulthood
   validates_uniqueness_of :email
 
+  has_many :bills, dependent: :destroy
+
   def adulthood
     self.age.present? and self.age > 18
   end
