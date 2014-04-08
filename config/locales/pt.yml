@@ -217,9 +217,17 @@ pt:
       user:
         one: Usuário
         other: Usuários
+      bill:
+        one: Conta
+        other: Contas
     attributes:
       user:
         name: Nome
         email: E-mail
         age: Idade
         gender: Sexo
+      bill:
+        name: Nome da conta
+        description: Descrição
+        value: Valor da conta
+        date: Data da conta

@@ -18,3 +18,17 @@
 
 <%= link_to t('back'), users_path, class: 'btn btn-default' %>
 <%= link_to t('edit'), edit_user_path(@user), class: 'btn btn-primary' %>
+
+<h4>
+  Contas do usuario <b><%= @user.name %></b>
+</h4>
+
+<div id="new_bill">
+  <%= render partial: 'bills/form', locals: { bill: Bill.new(user: @user) } %>
+</div>
+
+<hr>
+
+<div id='bills'>
+  <%= render partial: 'bills/index', locals: { bills: @user.bills } %>
+</div>

@@ -1,0 +1,14 @@
+<% if @bill.persisted? %>
+
+  <% form = render partial: 'bills/form', locals: { bill: Bill.new(user: @bill.user) } %>
+  $("#new_bill").html(" <%= j form %> ");
+
+  <% index = render partial: 'bills/index', locals: {bills: @bill.user.bills} %>
+  $("#bills").html("<%= j index %>");
+
+<% else %>
+
+  <% form = render partial: 'bills/form', locals: { bill: @bill } %>
+  $("#new_bill").html(" <%= j form %> ");
+
+<% end %>

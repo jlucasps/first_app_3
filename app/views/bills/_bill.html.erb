@@ -1,0 +1,16 @@
+
+<%= div_for bill, class: 'alert alert-info' do %>
+
+  <b><%= bill.name %></b> - <%= bill.description %>
+  <br>
+  <%= l bill.date, format: :long %>
+  <br>
+  <%= number_to_currency bill.value %>
+
+  <%= link_to "<i class='glyphicon glyphicon-trash'></i>".html_safe,
+              [bill.user, bill],
+              method: :delete,
+              remote: true,
+              class: 'pull-right' %>
+
+<% end %>

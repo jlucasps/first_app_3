@@ -7,8 +7,8 @@ class Bill < ActiveRecord::Base
 
   belongs_to :user
 
-
   default_scope { order('bills.date DESC') } 
+
   scope :recents, -> { order('bills.date DESC').limit(5) }
 
   scope :yesterday, -> { where('bills.date > ?', 1.day.ago) }

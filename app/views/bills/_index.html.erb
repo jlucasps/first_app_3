@@ -1,0 +1,13 @@
+<% if bills.any? %>
+
+  <% bills.each do |bill| %>
+    <%= render bill %>
+  <% end %>
+
+<% else %>
+
+  <div class="alert alert-warning">
+    Não há contas registradas!
+  </div>
+
+<% end %>
