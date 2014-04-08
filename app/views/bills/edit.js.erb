@@ -1,0 +1,9 @@
+
+
+
+<% form = render partial: 'bills/form', locals: {bill: @bill} %>
+$("#new_bill").html("<%= j form %>");
+
+$("html, body").animate({
+  scrollTop: $("#new_bill").offset().top - 70
+}); 

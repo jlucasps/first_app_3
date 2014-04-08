@@ -7,10 +7,15 @@
   <br>
   <%= number_to_currency bill.value %>
 
+  <%= link_to "<i class='glyphicon glyphicon-pencil'></i>".html_safe,
+              edit_user_bill_path( bill.user, bill ),
+              remote: true,
+              class: 'pull-right spaced' %>
+
   <%= link_to "<i class='glyphicon glyphicon-trash'></i>".html_safe,
               [bill.user, bill],
               method: :delete,
               remote: true,
-              class: 'pull-right' %>
+              class: 'pull-right spaced' %>
 
 <% end %>

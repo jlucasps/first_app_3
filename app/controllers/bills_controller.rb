@@ -12,6 +12,16 @@ class BillsController < ApplicationController
     @bill.destroy
   end
 
+
+  def edit
+    @bill = Bill.find(params[:id])
+  end
+
+  def update
+    @bill = Bill.find(params[:id])
+    @bill.update bill_params
+  end
+
   private
 
   def bill_params

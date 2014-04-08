@@ -1,0 +1,19 @@
+<% if @bill.valid? %>
+
+  <% form = render partial: 'bills/form',
+                  locals: { bill: Bill.new(user: @bill.user) } %>
+  $("#new_bill").html(" <%= j form %> ");
+
+  $("#bill_<%= @bill.id %>").replaceWith("<%= j(render @bill) %>");
+
+
+  $("html, body").animate({
+    scrollTop: $("#bill_<%= @bill.id %>").offset().top - 70
+  }); 
+
+<% else %>
+  
+  <% form = render partial: 'bills/form', locals: {bill: @bill} %>
+  $("#new_bill").html("<%= j form %>");
+
+<% end %>
