@@ -5,7 +5,9 @@ describe User do
   it 'creates a valid user' do
     user = User.new name: "Joao Lucas",
                     email: "jlucasps@gmail.com",
-                    age: 25, gender: User::MALE
+                    age: 25, gender: User::MALE,
+                    password: "12345",
+                    password_confirmation: "12345"
     user.save.should be_true
   end
 
@@ -22,7 +24,9 @@ describe User do
   it 'creates a user with FEMALE gender' do
     user = User.new name: "Candice",
                     email: "candice@gmail.com",
-                    gender: User::FEMALE
+                    gender: User::FEMALE,
+                    password: "12345",
+                    password_confirmation: "12345"
 
     user.save.should be_true
   end
@@ -31,13 +35,15 @@ describe User do
   context 'when age >= 18' do
     
     it 'creates an user with gender' do
-      user = User.new name: "n", email: "e",
-                    age: 19, gender: User::MALE 
+      user = User.new name: "n", email: "e@email.com",
+                    age: 19, gender: User::MALE,
+                    password: "12345",
+                    password_confirmation: "12345"
       user.save.should be_true  
     end
 
     it 'does not create with blank gender' do
-      user = User.new name: "n", email: "e", age: 19 
+      user = User.new name: "n", email: "e@email.com", age: 19 
       user.save.should be_false
     end
     
@@ -45,13 +51,17 @@ describe User do
 
   context 'when age < 18' do
     it 'creates an user with gender' do
-      user = User.new name: "n", email: "e",
-                    age: 17, gender: User::MALE 
+      user = User.new name: "n", email: "e@email.com",
+                    age: 17, gender: User::MALE,
+                    password: "12345",
+                    password_confirmation: "12345"
       user.save.should be_true  
     end
 
     it 'creates with blank gender' do
-      user = User.new name: "n", email: "e", age: 17
+      user = User.new name: "n", email: "e@email.com", age: 17,
+                    password: "12345",
+                    password_confirmation: "12345"
       user.save.should be_true  
     end
   end
