@@ -18,6 +18,21 @@
           <%= link_to "Sobre", about_path %>
         </li>
         <li><a href="#contact">Contact</a></li>
+          
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          </li>
+          <li>
+            <%= link_to "Editar conta", edit_user_registration_path(current_user) %>
+          </li>
+          
+        <% else %>
+          <li>
+            <%= link_to "Login", new_user_session_path, class: 'btn' %>
+          </li>
+        <% end %>
+
       </ul>
     </div><!-- /.nav-collapse -->
   </div><!-- /.container -->
