@@ -13,7 +13,9 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
   has_many :bills, dependent: :destroy
-  
+  has_many :comments, as: :commentable
+
+
   default_scope { order('users.email ASC') } 
 
   def adulthood

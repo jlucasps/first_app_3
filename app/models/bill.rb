@@ -6,6 +6,7 @@ class Bill < ActiveRecord::Base
   validates :value, presence: true
 
   belongs_to :user
+  has_many :comments, as: :commentable
 
   default_scope { order('bills.date DESC') } 
 
