@@ -18,6 +18,8 @@ group :development, :test do
   
   gem 'capybara-webkit'
 
+  gem 'factory_girl_rails', '~> 4.0'
+
 end
 
 gem 'rails_12factor'

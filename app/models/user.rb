@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
   has_many :bills, dependent: :destroy
+  
+  default_scope { order('users.email ASC') } 
 
   def adulthood
     self.age.present? and self.age > 18
