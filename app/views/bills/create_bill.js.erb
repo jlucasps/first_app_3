@@ -1,0 +1,10 @@
+<% if @bill.persisted? %>
+
+  $("#modal_new_bill").modal('hide');
+
+<% else %>
+  <% form = render partial: 'form_modal',
+            locals: {bill: @bill, users: @users} %>
+
+  $("#form_modal").html("<%= j form %>");
+<% end %>

@@ -22,7 +22,22 @@ class BillsController < ApplicationController
     @bill.update bill_params
   end
 
+
+  def new_bill
+    @bill = Bill.new
+    @users = User.all
+  end
+
+  def create_bill
+    @bill = Bill.create create_bill_params
+    @users = User.all
+  end
+
   private
+
+  def create_bill_params
+    params.permit(:user_id, :name, :description, :value, :date)
+  end
 
   def bill_params
     params.require(:bill).permit(:name, :description, :value, :date)

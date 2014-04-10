@@ -1,0 +1,45 @@
+
+<%= form_tag create_bill_path, remote: true do %>
+
+  <div class="modal-body">
+    <%= render partial: 'shared/error_messages',
+             locals: { resource: bill } %>
+
+    <div class="input-group col-md-6">
+      <span class="input-group-addon">Dono da conta</span>
+      <% options = users.map{|user| [user.name, user.id] } %>
+      <%= select_tag :user_id, options_for_select(options), class: 'form-control' %>
+    </div>
+    <br>
+
+    <div class="input-group col-md-6">
+      <span class="input-group-addon">Nome da Conta</span>
+      <%= text_field_tag :name, bill.name, class: 'form-control' %>
+    </div>
+    <br>
+
+    <div class="input-group col-md-6">
+      <span class="input-group-addon">Descrição</span>
+      <%= text_field_tag :description, bill.description,  class: 'form-control' %>
+    </div>
+    <br>
+
+    <div class="input-group col-md-6">
+      <span class="input-group-addon">Valor</span>
+      <%= text_field_tag :value, bill.value, class: 'form-control' %>
+    </div>
+    <br>
+
+    <div class="input-group col-md-6">
+      <span class="input-group-addon">Data da conta</span>
+      <%= date_field_tag :date, bill.date, class: 'form-control' %>
+    </div>
+    <br>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <%= submit_tag "Salvar", class: 'btn btn-primary' %>
+  </div>
+
+<% end %>

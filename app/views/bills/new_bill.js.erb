@@ -1,0 +1,7 @@
+
+<% modal = render partial: 'bills/modal',
+          locals: {bill: @bill, users: @users} %>
+
+$("#modal-container").html("<%= j modal %>");
+
+$("#modal_new_bill").modal();
