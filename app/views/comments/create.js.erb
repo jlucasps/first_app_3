@@ -15,6 +15,11 @@
   }); 
 
 <% else %>
-
+  
+  <% form = render partial: 'comments/form',
+             locals: { comment: @comment,
+                       user_id: params[:user_id],
+                       commentables:  @commentables } %>
+  $("#new_comment").replaceWith("<%= j form %>");
 
 <% end %>
