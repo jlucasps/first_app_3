@@ -1,0 +1,15 @@
+<%= div_for comment, class: 'panel panel-default' do %>
+  
+  <div class="panel-body">
+    
+    <%= comment.content %>
+    
+    </br>
+    
+    <div class="pull-right">
+      <b><%= comment.commentable.name %></b>
+    </div>
+
+  </div>
+
+<% end %>

@@ -1,0 +1,26 @@
+<%= form_for comment, remote: true do |f| %>
+  
+  <%= hidden_field_tag :user_id, user_id %>
+
+  <div class="input-group">
+    <span class="input-group-addon">
+      <i class="glyphicon glyphicon-user"></i>
+    </span>
+    <% elements = commentables.map { |commentable|
+      [commentable.name, "#{commentable.class}_#{commentable.id}"]
+    } %>
+    <% options = options_for_select elements  %>
+    <%= f.select :type_and_id, options, class: 'form-control' %>
+  </div>
+  <br>
+
+  <div class="input-group">
+    <span class="input-group-addon">
+      <i class="glyphicon glyphicon-comment"></i>
+    </span>
+    <%= f.text_area :content, class: 'form-control' %>
+  </div>
+
+  <%= f.submit "Salvar", class: 'btn btn-primary save-comment' %>
+
+<% end %>

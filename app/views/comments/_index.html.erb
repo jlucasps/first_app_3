@@ -1,0 +1,10 @@
+
+<% commentables.each do |commentable| %>
+
+  <% commentable.comments.each do |comment| %>
+    
+    <%= render comment %>
+
+  <% end %>
+
+<% end %>

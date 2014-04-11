@@ -1,0 +1,20 @@
+<% if @comment.persisted? %>
+  <% form = render partial: 'comments/form',
+             locals: { comment: Comment.new,
+                       user_id: params[:user_id],
+                       commentables:  @commentables } %>  
+
+  $("#new_comment").replaceWith("<%= j form %>");
+
+  <% list = render partial: 'comments/index',
+               locals: { commentables:  @commentables } %>
+  $("#comments").html("<%= j list %>");
+
+  $("html, body").animate({
+    scrollTop: $("#comment_<%= @comment.id %>").offset().top - 70
+  }); 
+
+<% else %>
+
+
+<% end %>

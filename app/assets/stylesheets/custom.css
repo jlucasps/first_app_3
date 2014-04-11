@@ -13,3 +13,9 @@ body {
 .edit_bill {
   background-color: #669999;
 }
+
+.save-comment {
+  width: 100%;
+  margin-top: 3px;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,16 @@
+<h3>
+  <%= user.name %>
+</h3>
+<p> <b>Email:</b> <%= user.email %></p>
+
+<p> <b>Quando nasceu?</b> <%= time_ago_in_words user.age.years.ago %></p>
+
+<p> <b>Sexo:</b> <%= gender_name user %></p>
+
+<p> <b>Data de criação:</b> <%= l(user.created_at, format: :long) %></p>
+
+<p> <b>Última atualização feita em </b> <%= time_ago_in_words user.updated_at %></p>
+
+<p> <b>Tempo entre criação e edição:</b>
+  <%= distance_of_time_in_words user.updated_at, user.created_at %>
+</p>
